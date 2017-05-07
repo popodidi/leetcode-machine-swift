@@ -5,6 +5,8 @@
 
 It's always good to have xcode with you when coding swift. Leveraging the autocompletion, type-checking ... features helps you when solving leetcode problems.
 
+![](screen-shot.png)
+
 ## Get started
 
 clone the repo

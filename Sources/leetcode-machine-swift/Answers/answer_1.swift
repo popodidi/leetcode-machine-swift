@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 let answer_1 = Answer { (nums: [Int], target: Int) -> [Int] in
     for i in 0..<nums.count{
         for j in i+1..<nums.count{

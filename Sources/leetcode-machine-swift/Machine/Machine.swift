@@ -15,7 +15,7 @@ class Machine {
     
     // MARK: - run
     static func run() {
-        let questions = Array(problems.keys)
+        let questions = Array(problems.keys).sorted { $0 < $1 }
         run(questions: questions)
     }
     
