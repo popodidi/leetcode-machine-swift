@@ -1,0 +1,6 @@
+.DS_Store
+/.build
+/Packages
+/Sources/leetcode-machine-swift/Answers/*
+!/Sources/leetcode-machine-swift/Answers/answer_1.swift
+/*.xcodeproj
