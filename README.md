@@ -1,7 +1,7 @@
 # leetcode-machine-swift
 
 
-**🆘 Please help set all leetcode problems in `Sources/leetcode-machine/main.swift`. 🆘**
+**🆘 Please help set all leetcode problems in `Sources/leetcode-machine-swift/leetcode.swift`. 🆘**
 
 It's always good to have xcode with you when coding swift. Leveraging the autocompletion, type-checking ... features helps you when solving leetcode problems.
 
