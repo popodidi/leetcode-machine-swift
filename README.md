@@ -74,6 +74,7 @@ Machine.solvers = [
 ### run
 
 ```swift
-Machine.run()        // run all problems
-Machine.run(1,2,3,4) // run specific problem(s)
+Machine.runAll()              // run all problems
+Machine.runAll(verbose: true) // verbose mode
+Machine.run(1,2,3,4)          // run specific problem(s)
 ```
