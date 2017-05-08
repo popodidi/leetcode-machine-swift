@@ -15,13 +15,18 @@ public struct Answer<Q: Any, A: Any>: ProblemSolver {
         self.solver = solver
     }
     
-    public func solve<I, O>(_ input: I) throws -> O {
+    // MARK: - ProblemSolver
+    public func solve<I, O>(_ input: I) throws -> (O, Double) {
         guard let q = input as? Q else {
             throw "solver with wrong input type"
         }
-        guard let a = solver(q) as? O else {
+        let start = Date()
+        let a = solver(q)
+        let end = Date()
+        guard a is O else {
             throw "solver with wrong output type"
         }
-        return a 
+        let executionTime = end.timeIntervalSince(start)
+        return ((a as! O), executionTime)
     }
 }

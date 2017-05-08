@@ -21,14 +21,20 @@ public struct Question<I: Any, O: Any>: Problem {
         self.outputs = outputs
         self.validation = validation
     }
-    public func validate(_ solver: ProblemSolver) throws {
+    
+    // MARK: - Problem
+    public func validate(_ solver: ProblemSolver) throws -> String {
         do {
+            var allResultStr = ""
             for (index, q) in inputs.enumerated() {
-                let answer: O = try solver.solve(q)
-                if !validation(answer, outputs[index]) {
-                    throw "validation: FAIL\n- input    : \(q)\n- output   : \(answer)\n- expected : \(outputs[index])"
+                let result: (answer: O, time: Double) = try solver.solve(q)
+                if !validation(result.answer, outputs[index]) {
+                    throw "validation: FAIL\n- input    : \(q)\n- output   : \(result.answer)\n- expected : \(outputs[index])"
+                } else {
+                    allResultStr += (allResultStr == "" ? "" : "\n") + "\n  - input    : \(q)\n  - output   : \(result.answer)\n  - duration : \(result.time) s"
                 }
             }
+            return allResultStr
         } catch {
             throw error
         }

@@ -14,17 +14,17 @@ class Machine {
     static var solvers: [Int: ProblemSolver] = [:]
     
     // MARK: - run
-    static func run() {
+    static func runAll(verbose: Bool = false) {
         let questions = Array(problems.keys).sorted { $0 < $1 }
-        run(questions: questions)
+        run(questions: questions, verbose: verbose)
     }
     
-    static func run(_ questions: Int ...) {
-        run(questions: questions)
+    static func run(_ questions: Int ..., verbose: Bool = false) {
+        run(questions: questions, verbose: verbose)
     }
     
     // MARK: - private func
-    private static func run(questions: [Int]) {
+    private static func run(questions: [Int], verbose: Bool) {
         print("==================================")
         print("===== leetcode-machine-swift =====")
         print("==================================")
@@ -33,14 +33,17 @@ class Machine {
         for q in questions {
             do {
                 guard let p = problems[q] else {
-                    throw"#\(q) problem not fount"
+                    throw"# \(q) problem not fount"
                 }
-                print("#\(q)", p.name)
+                print("# \(q)", p.name)
                 if let solver = solvers[q] {
-                    try p.validate(solver)
-                    print("validation: PASS")
+                    let detail = try p.validate(solver)
+                    print("  Validation: PASS")
+                    if verbose {
+                        print("  Details:", detail)
+                    }
                 } else {
-                    throw "solution not fount"
+                    throw "  solution not fount"
                 }
             } catch {
                 print(error)

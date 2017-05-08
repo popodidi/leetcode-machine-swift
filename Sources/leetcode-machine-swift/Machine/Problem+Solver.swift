@@ -10,9 +10,12 @@ import Foundation
 
 public protocol Problem {
     var name: String { get }
-    func validate(_ solver: ProblemSolver) throws
+    
+    // return validation details and throw when any of inputs failed in validation
+    func validate(_ solver: ProblemSolver) throws -> String
 }
 
 public protocol ProblemSolver {
-    func solve<I: Any, O: Any>(_ input: I) throws -> O
+    // return (answer: O, exectuion time: Double)
+    func solve<I: Any, O: Any>(_ input: I) throws -> (O, Double)
 }
