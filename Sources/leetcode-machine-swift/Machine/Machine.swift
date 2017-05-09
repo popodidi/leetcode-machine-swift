@@ -43,7 +43,7 @@ class Machine {
                         print("  Details:", detail)
                     }
                 } else {
-                    throw "  solution not fount"
+                    throw "  Validation: FAIL" + (verbose ? "\n  Details\n  - solution not fount" : "")
                 }
             } catch {
                 print(error)
