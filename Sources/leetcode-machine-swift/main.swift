@@ -16,6 +16,7 @@ Machine.solvers = [
     1 : answer_1,
     461 : answer_461,
     476 : answer_476,
+    500 : answer_500,
     557 : answer_557,
     561 : answer_561,
     566 : answer_566,
@@ -24,7 +25,9 @@ Machine.solvers = [
 
 // run all problems
 //Machine.runAll()
-Machine.run(557, verbose: true)
+Machine.run(500, verbose: true)
 
 // run specific problem(s)
 // Machine.run(1,2,3,4)
+
+let row_1 = CharacterSet(charactersIn: "qwertyuiop")

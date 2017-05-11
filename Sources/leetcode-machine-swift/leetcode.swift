@@ -13,6 +13,7 @@ let leetcode: [Int: Problem] = [
     461 : Question(name: "Hamming Distance", inputs: [(1, 4), (3,1)], outputs: [2, 1]),
     476 : Question(name: "Number Complement", inputs: [5, 1], outputs: [2, 0]),
     557 : Question(name: "Reverse Words in a String III", inputs: ["Let's take LeetCode contest"], outputs: ["s'teL ekat edoCteeL tsetnoc"]),
+    500 : Question(name: "Keyboard Row", inputs: [["Hello", "Alaska", "Dad", "Peace"]], outputs: [["Alaska", "Dad"]], validation: { return compare($0, $1) }),
     561 : Question(name: "Array Partition I", inputs: [[1,4,3,2]], outputs: [4]),
     566 : Question(name: "Reshape the Matrix", inputs: [([[1,2],[3,4]], 1, 4)], outputs: [[[1,2,3,4]]], validation: { (m1, m2) in
         if m1.count != m2.count {
